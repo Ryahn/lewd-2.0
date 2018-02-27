@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./static/img/favicon.png">
+
+    <title>Lewd.se</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link href="./static/style.css" rel="stylesheet"> -->
+    <link rel="stylesheet/less" type="text/css" href="./static/style.less" />
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Second navbar for search -->
+        <nav class="navbar navbar-inverse">
+            <div id="navs" class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-mobile">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="nav-mobile">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a class="collapsed" data-toggle="collapse" data-parent="#navs" href="#nav-info" aria-expanded="false" aria-controls="nav-info">Info</a>
+                        </li>
+                        <li>
+                            <a class="collapsed" data-toggle="collapse" data-parent="#navs" href="#nav-about" aria-expanded="false" aria-controls="nav-about">About</a>
+                        </li>
+                        <li>
+                            <a class="collapsed" data-toggle="collapse" data-parent="#navs" href="#nav-member" aria-expanded="false" aria-controls="nav-member">Member</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- /.navbar-collapse -->
+                <div id="navs">
+                    <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-info">
+                            <ul class="nav navbar-nav navbar-right nav-sub">
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#">Discord</a>
+                                </li>
+                                <li>
+                                    <a href="#">API</a>
+                                </li>
+                                <li>
+                                    <a href="#">Premium</a>
+                                </li>
+                            </ul>
+                    </div>
+                    <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-about">
+                        <ul class="nav navbar-nav navbar-right nav-sub">
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Abuse</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-member">
+                        <ul class="nav navbar-nav navbar-right nav-sub">
+                            <li>
+                                <a href="#">Login</a>
+                            </li>
+                            <li>
+                                <a href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+
+
+    </div>
+    <!-- /.container-fluid -->
+
+    <div class="[ container ]">
+        <div class="[ row ]">
+            <div class="[ col-xs-12 col-md-offset-1 col-md-10 text-center ]">
+                <form action="" id="form" name="fileForm" method="post" enctype="multipart/form-data" class="uploadForm">
+                    <div id="uploadButton" class="uploadButton">
+                        <p id="uploadText">
+                            Click to select a file
+                        </p>
+                        <input id="file" type="file" name="file">
+                    </div>
+                    <input type="hidden" name="source" value="web">
+                </form>
+                <p class="note">This storage is not permanent, check the about page for details</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("file").onchange = function () {
+            document.getElementById("uploadText").innerHTML = "Uploading...";
+            var button = document.getElementById("uploadButton");
+            button.className = button.className + " uploading";
+            document.getElementById("form").submit();
+        };
+        var $myGroup = $('#navs');
+    $myGroup.on('show.bs.collapse','.collapse', function() {
+        $myGroup.find('.collapse.in').collapse('hide');
+    });
+    </script>
+
+    </div>
+</body>
+
+</html>
